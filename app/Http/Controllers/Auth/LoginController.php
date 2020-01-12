@@ -51,13 +51,17 @@ class LoginController extends Controller
            'username' => 'required',
 
            'password' => 'required',
+           // 'email' => 'required',
 
        ]);
 
 
 
-       $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
+       // $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';//چنانچه بخواهیم از ایمیل و یا نام کاربری استفاده کنیم می توان از این دستور استفاده کرد
+       // چنانچه بخواهیم از ایمیل ، موبایل و نام کاربری استفاده کنیم می توان با دستور زیر مشخص کرد که کاربر از کدام فیلد استفاده می کند
+       if(preg_match('/^09[0-9]{9}$/', $request->username)){$fieldType='mobaile';}
+       elseif(filter_var($request->username, FILTER_VALIDATE_EMAIL)){$fieldType='email';}
+       else{$fieldType='username';}
        if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
 
        {

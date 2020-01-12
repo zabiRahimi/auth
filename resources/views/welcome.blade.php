@@ -78,6 +78,8 @@
                     @endauth
                 </div>
             @endif
+            <br>
+            <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
 
             <div class="content">
                 <div class="title m-b-md">
