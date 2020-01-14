@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="POST" action="{{ route('admin.login.post') }}">
+<form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

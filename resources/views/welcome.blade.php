@@ -79,8 +79,17 @@
                 </div>
             @endif
             <br>
-            <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
+            @guest
+                <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
+              @else
+                <button type="button" name="button" onclick="window.location.href='/register'">exit</button>
+            @endguest
+            <br>
+            @auth
+                {{ auth()->user()->name }}
+            @endauth
 
+            <br>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel

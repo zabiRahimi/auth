@@ -19,14 +19,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//
+// Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+// Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.post');
+// Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+//
+// /*
+//  _  admin profile routes
+//  */
+// Route::group(['middleware'=>'admin'], function() {
+//     Route::get('/admin/home', 'admin\HomeController@index');
+// });
+Route::prefix('admin')->group(function() {
+   Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+   Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.post');
-Route::post('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-
-/*
- _  admin profile routes
- */
-Route::group(['middleware'=>'admin'], function() {
-    Route::get('/admin/home', 'admin\HomeController@index');
-});
+  }) ;
+Route::get('/adminProfile', 'Admin\AdminController@profile')->name('adminDashboard')->middleware('admin');

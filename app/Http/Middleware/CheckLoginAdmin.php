@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+// use Illuminate\Support\Facades\Auth;
 class CheckLoginAdmin
 {
     /**
@@ -13,7 +13,7 @@ class CheckLoginAdmin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next,$guard='admin')
     {
       if(!auth()->guard($guard)->check()) {
           return redirect(route('admin.login'));
