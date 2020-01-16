@@ -36,4 +36,5 @@ Route::prefix('admin')->group(function() {
    Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
   }) ;
-Route::get('/adminProfile', 'Admin\AdminController@profile')->name('adminDashboard')->middleware('admin');
+  Route::get('/adminProfile', 'Admin\AdminController@profile')->name('adminDashboard')->middleware('admin');
+Route::get('/email', 'HomeController@email');

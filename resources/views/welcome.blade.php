@@ -79,6 +79,7 @@
                 </div>
             @endif
             <br>
+
             @guest
                 <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
               @else
@@ -90,6 +91,9 @@
             @endauth
 
             <br>
+            <hr><br>
+                <a href="/email">ارسال ایمیل</a>
+            <br><hr>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
