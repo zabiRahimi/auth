@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // use Illuminate\Support\Facades\Auth;
+// use App\Providers\RouteServiceProvider;
 use Auth;
 use Route;
 class AdminLoginController extends Controller
 {
-  // use AuthenticatesUsers;
+//   use AuthenticatesUsers;
 
-// protected $redirectTo = '/admin/home';
 //
 // /**
 //  **_ Create a new controller instance.

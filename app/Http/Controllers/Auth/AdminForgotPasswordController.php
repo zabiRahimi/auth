@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Password;
-use Auth;
+// use Illuminate\Support\Facades\Password;
+
 class AdminForgotPasswordController extends Controller
 {
     /*
@@ -21,17 +21,15 @@ class AdminForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
-        protected function broker()
-    {
-        return Password::broker('admins');
-    }
-    /**
-    * Display the form to request a password reset link.
-    *
-    * @return \Illuminate\Http\Response
-    */
+
     public function showLinkRequestForm()
     {
       return view('auth.passwords.admin_email');
     }
+        protected function broker()
+    {
+        return Password::broker('admins');
+    }
+
+
 }//end class

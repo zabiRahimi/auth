@@ -1,2 +1,24 @@
 .r_header{text-align: center; font-size: 22px; color: #176d71;}
 .form{text-align: right;}
+.card-header{text-align: center;}
+.card-body{direction: rtl;}
+.form-check-label{margin-left: 10px;}
+
+.mainShop{width: 100%;margin: 10px 0;padding: 10px;float: right;direction: rtl;text-align: right;}
+h1.shop {text-align: center;}
+h1.shop span{color: #086871}
+.shopUl{width: 100%;float: right;direction: rtl;margin: 0;padding: 0;}
+.shopUl li{padding: 0 6px 3px;border-radius: 6px;list-style: none;display: inline-block; color: #3c98f9;float: right;cursor: pointer;}
+li.shopLiProfile{margin-left: 15px;}
+li.shopLiEditPas{}
+li.shopLiLogout{float: left; color: #b10606;}
+.shopUl li:hover{color: #2677cc;background-color: #c8f0f7;}
+li.shopLiLogout:hover{color:#880505; background-color: #fbd8d8;}
+
+.divEditForm{width: 500px; margin: 30px calc((100% - 500px) / 2); border: 1px solid #e9e9e9; border-radius: 3px; float: right;}
+.headForm{width: 100%; height: 40px; line-height: 40px; border-bottom: 1px solid #e9e9e9; background:#e0eaed;text-align: center;}
+.formEditForm{width: 100%;padding: 10px;float: right;}
+.formEditForm div{width: 100%; float: right;}
+.formEditForm label{width: 30%; float: right;}
+.formEditForm input{width: 70%;float: right;}
+.formEditForm button{width: 100%;background: #1c4dbb;color: #fff;}

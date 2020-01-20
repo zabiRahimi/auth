@@ -11,23 +11,23 @@
 
         <!-- Styles -->
         <style>
+          *{box-sizing: border-box;}
             html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
+
 
             .flex-center {
+                width: 100%;
                 align-items: center;
-                display: flex;
+                float: right;
                 justify-content: center;
+
             }
 
             .position-ref {
@@ -35,13 +35,24 @@
             }
 
             .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+                width:98%;
+                height: 35px;
+                line-height: 35px;
+                margin: 5px 1%;
+                position:relative;
+                float: right;
+                text-align: right;
+                background: #dadada;
+                border-radius: 3px 3px 2px 2px;
             }
 
             .content {
+                width: 98%;
+                margin: 15px 1%;
                 text-align: center;
+                background: #ecf8ff;
+                float: right;
+                padding: 10px;
             }
 
             .title {
@@ -64,7 +75,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -78,37 +89,37 @@
                     @endauth
                 </div>
             @endif
-            <br>
 
-            @guest
-                <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
-              @else
-                <button type="button" name="button" onclick="window.location.href='/register'">exit</button>
-            @endguest
-            <br>
-            @auth
-                {{ auth()->user()->name }}
-            @endauth
 
-            <br>
-            <hr><br>
-                <a href="/email">ارسال ایمیل</a>
-            <br><hr>
+
+
+
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+              <div class="">
+                @guest
+                    <button type="button" name="button" onclick="window.location.href='/register'">SABT</button>
+                  @else
+                    <button type="button" name="button" onclick="window.location.href='/register'">exit</button>
+                @endguest
+                <br>
+                @auth
+                    {{ auth()->user()->name }}
+                @endauth
+
+              </div>
+              <div class="">
+                <br>
+                <hr><br>
+                    <a href="/email">ارسال ایمیل</a>
+                <br><hr>
+              </div>
+
+                <div class="">
+                  <button type="button"  onclick="window.location.href='{{ route('shop.login') }}'">ورود به فروشگاه</button>
+                  <button type="button"  onclick="window.location.href='{{ route('shop.register') }}'">ثبت فروشگاه</button>
+
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
