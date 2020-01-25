@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\AdminResetPasswordNotification;
+use App\Notifications\SendForgotPasswordNotification;
 class Admin extends Authenticatable
 {
   use Notifiable;
@@ -16,6 +16,7 @@ class Admin extends Authenticatable
   public $timestamps = false;
   public function sendPasswordResetNotification($token)
   {
-    $this->notify(new AdminResetPasswordNotification($token));
+    $url="http://localhost:8000/admin/password/reset/$token";//آدرس فرم ست کردن رمز جدید
+    $this->notify(new SendForgotPasswordNotification($url));
   }
 }

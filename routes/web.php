@@ -49,3 +49,14 @@ Route::prefix('shop')->group(function() {
   Route::get('/shopShowFormProfile', 'ShopController@showFormProfile')->name('shop.show.form.profile')->middleware('shop');
   Route::post('/shopEditProfile', 'ShopController@shopEditProfile')->name('shop.edit.profile')->middleware('shop');
   Route::get('/shopShowFormPas', 'ShopController@showFormPas')->name('shop.show.form.pas')->middleware('shop');
+  Route::post('/shopEditPas', 'ShopController@shopEditPas')->name('shop.edit.pas')->middleware('shop');
+
+  Route::get('/showEmailForgotShop' ,'Auth\ShopForgotPasswordController@showLinkRequestForm')->name('shop.password.email');
+  Route::post('/sendEmailForgotShop','Auth\ShopForgotPasswordController@sendResetLinkEmail')->name('shop.send.email');
+  Route::get('/showFormResetPasShop/{token}' ,'Auth\ShopResetPasswordController@showResetForm')->name('shop.ShowForm.reset');
+  Route::post('/sendFormResetPasShop' ,'Auth\ShopResetPasswordController@reset')->name('shop.SendForm.reset');
+
+// روتهای زیر موقتی و صرفا جهت چک کردن می باشند که باید حتما پاک شوند
+Route::get('/bladeSendEmailForgot', function () {
+    return view('auth.sendEmailForgot');
+});

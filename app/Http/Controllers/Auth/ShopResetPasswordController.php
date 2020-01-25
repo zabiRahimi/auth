@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
-class AdminResetPasswordController extends Controller
+class ShopResetPasswordController extends Controller
 {
 
     /**
@@ -19,15 +19,16 @@ class AdminResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/login';
+    protected $redirectTo = '/shopProfile';
 
 
     public function showResetForm(Request $request, $token = null)
     {
-      return view('auth.passwords.admin_reset')->with(
+      return view('shop.forgotPassword.shopShowFormReset')->with(
           ['token' => $token, 'email' => $request->email]
       );
     }
+    // جهت ارسال رمز جدید این متد باید فراخوانی شود
     public function reset(Request $request)
     {
         $request->validate($this->rules(), $this->validationErrorMessages());
@@ -70,7 +71,9 @@ class AdminResetPasswordController extends Controller
      */
     protected function validationErrorMessages()
     {
-        return [];
+        return [
+          'confirmed' => 'رمز عبور با تکرار رمز عبور برابر نیست'
+        ];
     }
 
     /**
@@ -149,10 +152,10 @@ class AdminResetPasswordController extends Controller
 
     protected function broker()
     {
-        return Password::broker('admins');
+        return Password::broker('shops');
     }
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('shop');
     }
 }//end class

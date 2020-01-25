@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Password;
 
-class AdminForgotPasswordController extends Controller
+class ShopForgotPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -24,11 +24,11 @@ class AdminForgotPasswordController extends Controller
 
     public function showLinkRequestForm()
     {
-      return view('auth.passwords.admin_email');
+      return view('shop.forgotPassword.shopShowEmailForgotPas');
     }
         protected function broker()
     {
-        return Password::broker('admins');
+        return Password::broker('shops');
     }
 
 

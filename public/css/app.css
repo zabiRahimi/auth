@@ -22,3 +22,16 @@ li.shopLiLogout:hover{color:#880505; background-color: #fbd8d8;}
 .formEditForm label{width: 30%; float: right;}
 .formEditForm input{width: 70%;float: right;}
 .formEditForm button{width: 100%;background: #1c4dbb;color: #fff;}
+
+.errorInput{border-color: #af1607;}
+.error{width: 70%;float: left;font-size: 12px;color: #af1607;}
+
+.headerForgotPasShop{width: 100%;margin-top: 2px;padding: 0 0 5px 0;border-bottom: 1px solid #e0e0e0;box-shadow: 0px 9px 13px -7px #d1d1d1 ; color: #737373;text-align: center;float: right;}
+.bodyforgot{width: 100%; margin-top: 10px; float: right;}
+.divForgotShop{width: 450px; margin: 5px calc((100% - 450px) / 2);border: 1px solid #e0e0e0;border-radius: 3px;float: right;}
+.divHeaderForgotShop{width: 100%;height: 40px;line-height: 40px;border-bottom: 1px solid #e0e0e0; background-color: #e8e3e3; text-align: center;float: right;}
+.formForgotShop{width: 100%;padding: 15px; float: right;}
+.btnForgotPasShop{width: 100%;background-color: #3370c2;color: #fff;text-align: center;}
+.btnForgotPasShop:hover{background-color: #437fd0;color: #fff;}
+
+.successSendEmail{width: 98%; margin: 5px 1%; padding: 4px 6px;float: right;text-align: right;}

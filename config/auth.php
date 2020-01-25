@@ -125,14 +125,14 @@ return [
         'admins' => [
           'provider' => 'admins',
           // 'email' => 'auth.emails.password',
-          'table' => 'password_resets',
+          'table' => 'admin_password_resets',
           'expire' => 60,
           'throttle' => 60,//خودم گذاشتم چک شود!!
 
       ],
       'shops' => [
         'provider' => 'shops',
-        'table' => 'password_resets',
+        'table' => 'shop_password_resets',
         'expire' => 60,
         'throttle' => 60,//خودم گذاشتم چک شود!!
 

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AdminResetPasswordNotification extends Notification
+class SendForgotPasswordNotification extends Notification
 {
     use Queueable;
 
@@ -16,12 +16,12 @@ class AdminResetPasswordNotification extends Notification
      *
      * @return void
      */
-     public $token;
-     public $url;
-    public function __construct($url,$token)
+    // public $token;
+    public $url;
+    public function __construct($url )
     {
-         $this->token = $token;
-          $this->url=$url;
+         // $this->token = $token;
+         $this->url=$url;
     }
 
     /**
@@ -42,8 +42,12 @@ class AdminResetPasswordNotification extends Notification
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
-    {   $token=$this->token;$url=$this->url;
-        return (new MailMessage)->view('auth.sendEmailForgot', compact('url'));
+    {
+        // $token=$this->token;
+        $url=$this->url;
+        return (new MailMessage)
+          ->view('auth.sendEmailForgot' , compact('url'))
+          ->subject('بازیابی رمز عبور');
     }
 
     /**
