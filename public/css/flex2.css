@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container{
+  background: #0d6b99;
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-container > div{
+  background: #579476;
+  margin: 20px;
+  padding: 20px;
+  font-size: 30px;
+  color: #fff;
+
+}

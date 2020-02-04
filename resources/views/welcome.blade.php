@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
         <!-- Styles -->
         <style>
@@ -72,6 +73,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .studyH1{background: #eaebe8;border-radius: 3px;}
         </style>
     </head>
     <body>
@@ -119,8 +121,24 @@
                   <button type="button"  onclick="window.location.href='{{ route('shop.register') }}'">ثبت فروشگاه</button>
 
                 </div>
+                <br><hr>
+                <div class="studyFlex">
+                  <h1 class="studyH1">آمورش flex</h1>
+                  <button type="button" class="btn btn-info"  onclick="window.location.href='/flex'">flex</button>
+                  <button type="button" class="btn btn-info"  onclick="window.location.href='/flex2'">flex لرن تاپ</button>
+
+                </div>
+                <br><hr>
+                <div class="studyPhp">
+                  <h1 class="studyH1">آموزش php</h1>
+                  <button type="button" class="btn btn-info"  onclick="window.location.href='{{ route('phpinfo') }}'">phpinfo</button>
+                  <button type="button" class="btn btn-info"  onclick="window.location.href='{{ route('gettype') }}'">gettype</button>
+
+                </div>
 
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     </body>
 </html>

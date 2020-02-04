@@ -60,3 +60,13 @@ Route::prefix('shop')->group(function() {
 Route::get('/bladeSendEmailForgot', function () {
     return view('auth.sendEmailForgot');
 });
+Route::get('/flex', function () {
+    return view('flex');
+});
+Route::get('/flex2' , function(){
+  return view('flex2');
+});
+Route::prefix('studyPhp')->group(function(){
+  Route::get('/phpinfo','StudyPhpController@phpinfo')->name('phpinfo');
+  Route::get('/gettype','StudyPhpController@gettype')->name('gettype');
+});
